@@ -203,3 +203,10 @@ it('TC10 GET - API should return response body in expected format', () => {
     expect(response.body.query.city).to.eq('Ankara');
   });
 });
+it('TC11 GET - API should respond within acceptable time', () => {
+  cy.request('GET', 'https://api.testingapis.com/api/echo')
+    .then((response) => {
+      expect(response.status).to.equal(200);
+      expect(response.duration).to.be.lessThan(1000);
+    });
+});
