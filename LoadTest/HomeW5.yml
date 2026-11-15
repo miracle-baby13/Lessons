@@ -22,6 +22,10 @@ config:
         - "http.response_time.p99": 1500
         - "http.response_time.mean": 800
 
+          conditions:
+        - expression: "vusers.failed == 0"
+        - expression: "http.response_time.max < 1000 and http.response_time.2xx.p99 < 1500"
+
 scenarios:
   - name: "Posts API Test"
     flow:
