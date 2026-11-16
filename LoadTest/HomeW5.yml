@@ -4,8 +4,8 @@ config:
   phases:
     - duration: 30
       arrivalRate: 1
-    
 
+      
   payload:
     path: "load.csv"
     fields:
