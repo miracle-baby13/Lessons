@@ -4,6 +4,9 @@ name: CI-CD Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "0 8 * * *"
+
   push:
     branches:
       - main
@@ -51,7 +54,7 @@ jobs:
           name: cypress-videos
           path: cypress/videos/**/*.mp4
           retention-days: 1
-          if-no-files-found: ignore
+         
 
       - name: Upload Cypress screenshots
         if: always()
@@ -60,4 +63,4 @@ jobs:
           name: cypress-screenshots
           path: cypress/screenshots/**/*.png
           retention-days: 1
-          if-no-files-found: ignore
+         
