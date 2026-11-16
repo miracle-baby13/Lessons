@@ -1,7 +1,7 @@
 describe("Page object example", () => {
   it("login page test", () => {
 // visit page
-    cy.visit("<https://www.edu.goit.global/account/login>");
+    cy.visit("https://www.edu.goit.global/account/login");
 // check title
     cy.get(".css-10stgr7 > .css-c1vj7d").should("be.visible");
     cy.get(".css-10stgr7 > .css-c1vj7d").should("have.text", "Login");
